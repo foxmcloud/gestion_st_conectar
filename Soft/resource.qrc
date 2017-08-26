@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons/">
+    <file>icons/alta.png</file>
+    <file>icons/app.png</file>
+    <file>icons/baja.png</file>
+    <file>icons/cambio.png</file>
+    <file>icons/lista.png</file>
+    <file>icons/login.png</file>
+    <file>icons/modificar.png</file>
+    <file>icons/user.png</file>
+  </qresource>
+</RCC>
