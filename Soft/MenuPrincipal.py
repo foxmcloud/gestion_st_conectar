@@ -46,6 +46,7 @@ class MenuPrincipal(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.actionTabla_ST_Parque_Escolar, QtCore.SIGNAL('triggered()'),lambda:self.exportar_tabla('parst'))
         QtCore.QObject.connect(self.ui.actionTabla_Alumnos, QtCore.SIGNAL('triggered()'),lambda:self.exportar_tabla('ad'))
         QtCore.QObject.connect(self.ui.actionTabla_Parque, QtCore.SIGNAL('triggered()'),lambda:self.exportar_tabla('par'))
+        QtCore.QObject.connect(self.ui.actionTabla_Planilla_ST, QtCore.SIGNAL('triggered()'),lambda:self.exportar_tabla('pla'))
         QtCore.QObject.connect(self.ui.actionRenovar_ticket_a, QtCore.SIGNAL('triggered()'), self.rehacer_ticket)
         QtCore.QObject.connect(self.ui.actionRenovar_Ticket_p, QtCore.SIGNAL('triggered()'), self.rehacer_ticket_parque)
         QtCore.QObject.connect(self.ui.actionGenerar_Etiquetas, QtCore.SIGNAL('triggered()'), self.hacer_etiquetas)

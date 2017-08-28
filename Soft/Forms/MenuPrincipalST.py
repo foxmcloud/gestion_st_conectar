@@ -161,6 +161,8 @@ class Ui_MainWindow(object):
         self.actionRenovar_Ticket_p.setObjectName(_fromUtf8("actionRenovar_Ticket_p"))
         self.actionGenerar_Etiquetas = QtGui.QAction(MainWindow)
         self.actionGenerar_Etiquetas.setObjectName(_fromUtf8("actionGenerar_Etiquetas"))
+        self.actionTabla_Planilla_ST = QtGui.QAction(MainWindow)
+        self.actionTabla_Planilla_ST.setObjectName(_fromUtf8("actionTabla_Planilla_ST"))
         self.menuDirectivo.addAction(self.actionCargar_Datos_Directivo)
         self.menuTickets.addAction(self.actionAbrir_carpeta_de_tickets)
         self.menuTickets.addAction(self.actionRetira_Servicio_Tecnico)
@@ -171,6 +173,7 @@ class Ui_MainWindow(object):
         self.menuExportar.addAction(self.actionTabla_ST_Parque_Escolar)
         self.menuExportar.addAction(self.actionTabla_Alumnos)
         self.menuExportar.addAction(self.actionTabla_Parque)
+        self.menuExportar.addAction(self.actionTabla_Planilla_ST)
         self.menuColegios.addAction(self.actionGenerar_Etiquetas)
         self.menuBar.addAction(self.menuDirectivo.menuAction())
         self.menuBar.addAction(self.menuTickets.menuAction())
@@ -216,5 +219,6 @@ class Ui_MainWindow(object):
         self.actionRenovar_ticket_a.setText(_translate("MainWindow", "Renovar Ticket Alumno", None))
         self.actionRenovar_Ticket_p.setText(_translate("MainWindow", "Renovar Ticket Parque", None))
         self.actionGenerar_Etiquetas.setText(_translate("MainWindow", "Generar Etiquetas", None))
+        self.actionTabla_Planilla_ST.setText(_translate("MainWindow", "Tabla Planilla ST", None))
 
 import resource_rc
