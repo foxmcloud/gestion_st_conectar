@@ -25,7 +25,11 @@ def mostrar_Movimiento(ticket):
         l += s
     return l
 
-
+def actualizar_Ticket_Movimiento(n_ticket,n_ticket_viejo):
+    con = sqlite3.connect("bbdd.dat")
+    cursor = con.cursor()
+    cursor.execute("UPDATE MOVIMIENTOS SET N_TICKET_FK = ? WHERE N_TICKET_FK = "+n_ticket_viejo,(n_ticket,))
+    con.commit()
 
 if __name__ == '__main__':
     print(mostrar_Movimiento(1001))

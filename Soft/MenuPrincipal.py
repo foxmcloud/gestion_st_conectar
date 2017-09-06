@@ -7,6 +7,7 @@ import Modulos.ST.Escribir
 import Modulos.ST.escribircolegios
 import Modulos.ST.entradaysalida
 from Modulos.ST.Altas import *
+from Modulos.ST.Modificar_Ticket import *
 from Modulos.ST.exportarcsv import *
 from Modulos.ST.modificar_Dire import *
 from PyQt4 import QtSql
@@ -51,8 +52,7 @@ class MenuPrincipal(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.actionRenovar_Ticket_p, QtCore.SIGNAL('triggered()'), self.rehacer_ticket_parque)
         QtCore.QObject.connect(self.ui.actionGenerar_Etiquetas, QtCore.SIGNAL('triggered()'), self.hacer_etiquetas)
         QtCore.QObject.connect(self.ui.btn_agregarComentario, QtCore.SIGNAL('clicked()'), self.agregarcomentario)
-
-        #QtCore.QObject.connect(self.ui.Edit_AyN,QtCore.SIGNAL())
+        QtCore.QObject.connect(self.ui.btn_Modificar_Ticket, QtCore.SIGNAL('clicked()'), self.modificar_ticket)
 
         self.filter_proxy_model = QtGui.QSortFilterProxyModel()
         self.Completar_lista_alumnos()
@@ -62,6 +62,15 @@ class MenuPrincipal(QtGui.QMainWindow):
         a = self.cursor.fetchone()
         if a[0] == 0 :
             self.modificar_dire()
+
+    def modificar_ticket(self):
+        if self.fila_diferente_seleccionada() != None:
+            self.ticket = str(self.filter_proxy_model.data(self.filter_proxy_model.index(self.fila_diferente_seleccionada(), 0)))
+        else:
+            return
+        modificacion = FormModiTicket(self.usuario,self.con,self.cursor,self.ticket,self.ui.rb_ad.isChecked())
+        modificacion.exec_()
+        self.Completar_lista_alumnos()
 
     def agregarcomentario(self):
         if self.fila_diferente_seleccionada() != None:
